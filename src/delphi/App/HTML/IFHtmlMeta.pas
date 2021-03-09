@@ -3,7 +3,7 @@ unit IFHtmlMeta;
 interface
 
 uses
-  System.Classes, System.SysUtils;
+  Classes, SysUtils;
 
 type
 
@@ -73,6 +73,7 @@ function TIFHtmlHeadMetaList.Render: string;
 var
   i : Integer;
 begin
+  Result := '';
   for I := 0 to Count-1 do
     Result := Result + TIFHtmlHeadMeta(Items[i]).Render;
 end;

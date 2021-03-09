@@ -3,7 +3,7 @@ unit IFHtmlLink;
 interface
 
 uses
-  System.Classes, System.SysUtils;
+  Classes, SysUtils;
 
 type
   TIFHtmlHeadLink = class(TObject)
@@ -87,6 +87,7 @@ function TIFHtmlHeadLinkList.Render: string;
 var
   i : Integer;
 begin
+  Result := '';
   for I := 0 to Count-1 do
     Result := Result + TIFHtmlHeadLink(Items[i]).Render;
 end;

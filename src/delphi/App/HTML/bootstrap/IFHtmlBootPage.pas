@@ -3,7 +3,7 @@ unit IFHtmlBootPage;
 interface
 
 uses
-  System.Classes, System.SysUtils, IFHtmlMeta, IFHtmlLink, IFHtmlElement,
+  Classes, SysUtils, IFHtmlMeta, IFHtmlLink, IFHtmlElement,
   IFHtmlPage;
 
 type
@@ -21,10 +21,9 @@ implementation
 constructor TIFHtmlBootPage.Create;
 begin
   inherited;
-  // Bootstrap 3.3.6
-  Links.addLink('', '/assets/css/bootstrap.min.css', '', '', 'stylesheet', '', '');
-  // Font Awesome
-  Links.addLink('', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css', '', '', 'stylesheet', '', '');
+  // Bootstrap 5.x
+  Links.addLink('', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css', '', '', 'stylesheet', '', '');
+  Scripts.addScript().Link := 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js';
 end;
 
 end.

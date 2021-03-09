@@ -3,7 +3,7 @@ unit IFHtmlBootElement;
 interface
 
 uses
-  System.Classes, System.SysUtils, IFHtmlElement;
+  Classes, SysUtils, IFHtmlElement;
 
 type
 

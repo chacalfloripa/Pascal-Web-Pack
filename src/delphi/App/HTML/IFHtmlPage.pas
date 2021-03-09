@@ -3,11 +3,15 @@ unit IFHtmlPage;
 interface
 
 uses
-  System.Classes, System.SysUtils, IFHtmlMeta, IFHtmlLink, IFHtmlElement;
+  Classes, SysUtils, IFHtmlMeta, IFHtmlLink, IFHtmlElement, IFHtmlScript;
 
 type
+
+  { TIFHtmlPage }
+
   TIFHtmlPage = class(TObject)
   private
+    FScripts: TIFHtmlScriptList;
     FTitle: string;
     FStyleBodyClass: string;
     FHtmlLang: string;
@@ -24,7 +28,9 @@ type
     property Title :string read FTitle write FTitle;
     property Metas : TIFHtmlHeadMetaList read FMetas write FMetas;
     property Links : TIFHtmlHeadLinkList read FLinks write FLinks;
+    property Scripts : TIFHtmlScriptList read FScripts write FScripts;
     property Body : TIFHtmlElementBody read FBody write FBody;
+
   end;
 
 implementation
@@ -36,6 +42,7 @@ constructor TIFHtmlPage.Create;
 begin
   FMetas := TIFHtmlHeadMetaList.Create;
   FLinks := TIFHtmlHeadLinkList.Create;
+  FScripts := TIFHtmlScriptList.Create;
   FBody := TIFHtmlElementBody.Create;
   //
   DOCTYPE := 'html';
@@ -56,6 +63,7 @@ begin
   sText := sText + FLinks.Render;
   sText := sText + '</head>';
   sText := sText + Body.Render;
+  sText := sText + FScripts.Render;
   sText := sText + '</html>';
   Result := sText;
 end;
