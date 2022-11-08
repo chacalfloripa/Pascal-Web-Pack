@@ -1,0 +1,22 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2022-05-15T20:10:05.9248404-03:00",
+	"installedModules": {
+		"github.com/cachopaweb/horse-server-static": {
+			"name": "horse-server-static",
+			"version": "1.0.4",
+			"hash": "c461e15a6cdbb7e09f368fe5585caf7e",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "v2.0.14",
+			"hash": "38c6bebdc7b9712d6e5856d299289a26",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
